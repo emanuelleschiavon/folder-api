@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :documents, :except => [:update, :destroy]
+  namespace 'api' do
+  	namespace 'v1' do
+  		resources :documents, :except => [:update, :destroy]
+  	end
+  end
 end
